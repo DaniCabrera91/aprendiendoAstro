@@ -1,0 +1,52 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import {  getLaunchById } from "../../services/spacex";
+
+export const prerender = false // Server
+
+const { id } = Astro.params;
+
+
+let launch
+if (id) {
+    launch = await getLaunchById({ id  });
+}
+
+// LLamar a ua API externa para saber las Ids que debemos generar. El problema de usar server en astro.config para generar así las rutas
+// es que necesitamos estar conectados a un servidor para que funcione, es decir 
+// no podemos mostrar una página estática que no dependa de un servidor para generar las rutas dinámicamente.
+
+//Si queremos lo mejor de ambos mundos podemos usar hybrid rendering, que es una mezcla de renderizado estático y dinámico.
+
+// En este caso, estamos simulando con un array de objetos
+// export function getStaticPaths() {
+//     return [
+//             { params: { id: '5eb87cd9ffd86e000604b32a' } },        
+//             { params: { id: '5eb87cdaffd86e000604b32b' } },
+//         ]
+// }
+
+
+// //Esto es correcto y positivo cuando antes de que el usuario entre a la pagina conocemos todas las páginas, servicios, productos que queremos servir y son limitados.
+// // Es un número finito de páginas que podemos generar en el momento de la construcción del sitio. 
+// export async function getStaticPaths() {
+//     const launches = await getLatestLaunches();  
+    
+//     return launches.map((launch) => ({
+//         params: { id: launch.id }
+//     }))
+// }
+
+
+---
+
+<Layout title={`Lanzamiento ${id}`}>
+    <article class="flex gap-y-4 flex-col">
+        <img class="w-52 h-auto" 
+            src={launch?.links?.patch.small} 
+            alt={launch?.name}
+        >
+        <h2 class="text-4xl text-white font-bold">Launch #{launch?.flight_number}</h2>
+        <p class="text-lg"> {launch?.details} </p>
+    </article>
+</Layout>

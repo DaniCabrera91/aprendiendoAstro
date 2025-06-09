@@ -1,48 +1,26 @@
-# Astro Starter Kit: Basics
+# Aprendiendo Astro
 
-```sh
-npm create astro@latest -- --template basics
-```
+_Ejercicio de aprendizaje basado en un tutorial de [midudev](https://midu.dev/) ([GitHub](https://github.com/midudev)) sobre Astro, un framework moderno para el desarrollo web._
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Tutorial
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+https://www.youtube.com/watch?v=RB5tR_nqUEw
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## Descripción
 
-## 🚀 Project Structure
+La aplicación incluye ejemplos prácticos de componentes, rutas, interactividad y estilos usando Tailwind CSS. El objetivo es entender los conceptos básicos de Astro y cómo integrarlo con otras tecnologías modernas del frontend.
 
-Inside of your Astro project, you'll see the following folders and files:
+## Tecnologías utilizadas
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+- [Astro](https://astro.build/)
+- [Tailwind CSS](https://tailwindcss.com/)
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Estructura
 
-## 🧞 Commands
+- Componentes reutilizables (por ejemplo, botones y contadores)
+- Navegación entre páginas
+- Ejemplo de hidratación parcial de componentes
 
-All commands are run from the root of the project, from a terminal:
+## Créditos
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Ejercicio realizado siguiendo el tutorial de midudev.

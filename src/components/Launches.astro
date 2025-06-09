@@ -1,0 +1,33 @@
+---
+ // Podemos ejecutar el Js que queramos en el cliente
+import { getLatestLaunches } from "../services/spacex";
+import CardLaunch from "./CardLaunch.astro";
+
+const launches = await getLatestLaunches();
+
+---
+
+<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+    {
+        launches.map(({ id, links, details, flight_number: flightNumber, success}) => (
+                <CardLaunch
+                    id= {id}
+                    img={links.patch.small}
+                    details={details}
+                    flightNumber={flightNumber}
+                    success={success}
+                />
+            ))
+    }
+</div>
+
+<!-- 
+similar a JSX y un componente React. Las diferencias son:
+
+- En Astro, el bloque de JavaScript (entre ---) se ejecuta en el servidor, no en el cliente.
+- Puedes usar expresiones JS dentro de llaves `{}` en el HTML, igual que en JSX.
+- No necesitas `return` ni una función componente, el HTML es el "template" principal.
+- No hay estado ni hooks por defecto, es solo renderizado estático (a menos que uses un framework).
+- Puedes usar cualquier sintaxis HTML válida, no necesitas `className`, se usa `class` como en HTML.
+- Los componentes Astro pueden mezclar HTML, JS y Markdown de forma nativa.
+-->
