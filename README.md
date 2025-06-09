@@ -14,6 +14,7 @@ La aplicación incluye ejemplos prácticos de componentes, rutas, interactividad
 
 - [Astro](https://astro.build/)
 - [Tailwind CSS](https://tailwindcss.com/)
+- [Preact](https://preactjs.com)
 
 ## Estructura
 
